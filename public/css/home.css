@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: absolute;
+    background-image: url(./images/p9mUO.jpg);
+    background-color: #164A41;
+    background-blend-mode:hard-light;
+    width:100%;
+    height: 100vh;
+    text-align: center;
+}
+
+.header {
+    color: honeydew;
+    background: #164A41;
+    margin: 10px 5px;
+    padding: 5px;
+    border-radius: 10px;
+    font-family: 'Seymour One', sans-serif;
+    font-size: 12px;
+}
+
+h1, h2, h3 {
+    margin-top: 10px;
+}
