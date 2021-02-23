@@ -26,3 +26,59 @@
 h1, h2, h3 {
     margin-top: 10px;
 }
+
+
+.secondSection {
+    border-radius: 10px;
+    margin: 10px 5px;
+    padding: 5px;
+}
+
+
+.pencil {
+    color: honeydew;
+    font-size: 34px;
+    height: 50px;
+}
+
+.auth {
+    display: flex;
+    position: relative;
+    height: 70vh;
+    font-family: 'Seymour One', sans-serif;
+    color: honeydew;
+}
+
+.loginContainer {
+    position: absolute;
+    left: 0;
+    grid-area: left;
+    height: 40%;
+    width: 47%;
+    margin: 10px;
+    background-color: #164A41;
+    border-radius: 10px;
+    text-align: center;
+
+}
+
+.registerContainer {
+    position: absolute;
+    grid-area: right;
+    height: 40%;
+    background-color: #164A41;
+    width: 47%;
+    right: 0;
+    margin: 10px;   
+    border-radius: 10px;
+    text-align: center;
+}
+
+.authText {
+    margin: 15px 0;
+}
+
+a {
+    margin-top: 60px;
+    padding: 10px;
+}
