@@ -16,11 +16,12 @@
 .header {
     color: honeydew;
     background: #164A41;
-    margin: 10px 5px;
+    margin: 20px 5px;
     padding: 5px;
     border-radius: 10px;
     font-family: 'Seymour One', sans-serif;
     font-size: 12px;
+    border: 2px solid honeydew;
 }
 
 h1, h2, h3 {
@@ -44,7 +45,7 @@ h1, h2, h3 {
 .auth {
     display: flex;
     position: relative;
-    height: 70vh;
+    height: 60vh;
     font-family: 'Seymour One', sans-serif;
     color: honeydew;
 }
@@ -59,6 +60,7 @@ h1, h2, h3 {
     background-color: #164A41;
     border-radius: 10px;
     text-align: center;
+    border: 2px solid honeydew;
 
 }
 
@@ -72,6 +74,7 @@ h1, h2, h3 {
     margin: 10px;   
     border-radius: 10px;
     text-align: center;
+    border: 2px solid honeydew;
 }
 
 .authText {
@@ -81,4 +84,36 @@ h1, h2, h3 {
 a {
     margin-top: 60px;
     padding: 10px;
+}
+
+
+.footer {
+    border: 2px solid honeydew;
+    width: 99%;
+    height: 100px;
+    background-color: #164A41;
+    position: absolute;
+    bottom: 15px;
+    border-radius: 10px;
+}
+
+.socials {
+    width: 45%;
+    position: absolute;
+    left: 0;
+    font-family: 'Seymour One', sans-serif;
+    color: honeydew;
+}
+
+.contact {
+    position: absolute;
+    right: 0;
+    width: 45%;
+    font-family: 'Seymour One', sans-serif;
+    color: honeydew;
+}
+
+.footerText {
+    margin: 10px;
+    font-size: 16px;
 }
