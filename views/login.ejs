@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todolist</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Seymour+One&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <form action="/login" method="post" class="loginForm">
-        <input type="email" name="email" class="loginInput" id="" placeholder="email">
-        <input type="password" name="password" class="loginInput" id="" placeholder="password">
-        
-        <button class="loginBtn" type="submit">Sign in</button>
-        
-        <span>Dont have account?</span>
-        <a href="/register" class="regLink">Register</a>
-        <a href="/reset" class="regLink">Forgot password?</a>
-        
-    </form>
+    <div class="container">
+        <h1>Sign in</h1>
+        <div class="input-container">
+            <form action="/login" method="post">
+                <div class="input">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" placeholder="email">
+                </div>
+                <div class="input">
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" placeholder="password">
+                </div>
+                <button class="loginBtn" type="submit">Sign in</button>
+
+                <span>Dont have account?</span>
+                <a href="/register" class="regLink">Register</a>
+                <a href="/reset" class="regLink">Forgot password?</a>
+
+            </form>
+        </div>
+
+    </div>
+
 </body>
+
 </html>
