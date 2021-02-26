@@ -6,6 +6,7 @@
 .container {
     position: absolute;
     background-image: url(./images/p9mUO.jpg);
+    background-size: cover;
     background-color: #164A41;
     background-blend-mode:hard-light;
     width:100%;
