@@ -6,8 +6,16 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true },
     token: String,
     tokenExpiration: Date,
+    todoList: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "task",
+    }]
 })
 
+userSchema.methods.addTodo = async function(todoId) {
+    this.todoList.push(todoId);
+    await this.save();
+}
 
 const User = mongoose.model("user", userSchema);
 
