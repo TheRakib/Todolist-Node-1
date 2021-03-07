@@ -17,6 +17,11 @@ userSchema.methods.addTodo = async function(todoId) {
     await this.save();
 }
 
+userSchema.methods.deleteTodo = async function(todoId) {
+    this.todoList.pull(todoId);
+    this.save();
+}
+
 const User = mongoose.model("user", userSchema);
 
 module.exports = User
