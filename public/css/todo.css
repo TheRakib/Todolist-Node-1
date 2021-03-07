@@ -1,0 +1,36 @@
+
+
+.input-container {
+    display: block;
+    text-align: center;
+    align-items: center;
+
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    background-image: url(./images/p9mUO.jpg);
+    background-size: cover;
+    background-color: #164A41;
+    background-blend-mode:hard-light;
+    width: 100vw;
+    height: 100vh;
+
+}
+
+.todo-container {
+    margin: 1.5rem;
+    display: flex;
+    position: relative;
+    background-color: pink;
+    width: 50vw;
+    min-height: 30%;
+}
+
+.todo {
+    display: flex;
+    flex-direction: row;
+}

@@ -5,12 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/todo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <title>Todo</title>
 </head>
 
 
 <body>
+    
+    <div class="container">
     <h1>Todolist</h1>
     <div class="input-container">
         <form action="/todo" method="post">
@@ -19,26 +22,33 @@
         </form>
     </div>
 
-    <% for (let i = 0; i <todos.length; i++) { %>
-        <% let a = todos[i].date; %>
-        <% let dd = a.getDate(); %>
-        <% if (dd < 10) { %>
-        <%dd = "0"+dd; %>
-        <% } %>
-        <% let mm = a.getMonth() + 1; %>
-        <% if (mm < 10) { %>
-        <% mm = "0"+mm; %>
-        <%} %>
-        <% let y = a.getFullYear(); %>
-        <% let z = y.toString(); %>
-        <% let yy = z.slice(2, 4); %>
-        <% let date = dd + '/' + mm + '/' + yy; %>
-
-        <p><%= todos[i].task %></p>
-        <p><%= date %></p>
-        <a class="btn-edit" href="/edit/<%= todos[i]._id%>"><i class="far fa-edit"></i></a>
-        <a class="btn-delete" href="/delete/<%= todos[i]._id%>"><i class="fas fa-trash"></i></a>
-    <%} %>
+    <div class="todo-container">
+            <% for (let i = 0; i <todos.length; i++) { %>
+            <% let a = todos[i].date; %>
+            <% let dd = a.getDate(); %>
+            <% if (dd < 10) { %>
+            <%dd = "0"+dd; %>
+            <% } %>
+            <% let mm = a.getMonth() + 1; %>
+            <% if (mm < 10) { %>
+            <% mm = "0"+mm; %>
+            <%} %>
+            <% let y = a.getFullYear(); %>
+            <% let z = y.toString(); %>
+            <% let yy = z.slice(2, 4); %>
+            <% let date = dd + '/' + mm + '/' + yy; %>
+                <section class="todo">
+                    <p><%= todos[i].task %></p>
+                    <p><%= date %></p>
+                    <a class="btn-edit" href="/edit/<%= todos[i]._id%>"><i class="far fa-edit"></i></a>
+                    <a class="btn-delete" href="/delete/<%= todos[i]._id%>"><i class="fas fa-trash"></i></a>
+                </section>
+                
+            <%} %>
+        </div>
+        
+    </div>
+    
 
 </body>
 
