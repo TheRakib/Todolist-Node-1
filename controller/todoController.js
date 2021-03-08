@@ -10,14 +10,12 @@ const createTodo = async (req, res) => {
     const newTask = await new Todo({
       task: req.body.task,
     }).save();
-    console.log(newTask._id);
     const user = await User.findOne({ _id: req.user.user._id });
     await user.addTodo(newTask._id);
 
     const userTodos = await User.findOne({ _id: req.user.user._id }).populate(
       "todoList"
     );
-    console.log(userTodos);
     res.redirect("/todo");
   } catch (err) {
     console.log(err);
@@ -62,7 +60,6 @@ const todoRender = async (req, res) => {
     const userTodoList = await User.findOne({ _id: req.user.user._id}).limit(dataPerPage).populate("todoList");
     const count = userTodoList.todoList.length;
     
-    console.log(userTodos.todoList);
     res.render("todo.ejs", {
        data: userTodos.todoList,
        user: req.user.user.username,

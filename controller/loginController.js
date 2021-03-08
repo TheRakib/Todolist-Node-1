@@ -18,7 +18,7 @@ const loginSubmit = async (req, res) => {
     
     const validUser = await bcrypt.compare(password, user.password)
     
-    console.log(validUser)
+    
     
     if(!validUser) return res.redirect("/login");
     
