@@ -9,9 +9,11 @@ const {
   todoRender,
   createTodo,
   deleteTodo,
+  redirectRender
 } = require("../controller/todoController");
 
-todoRouter.get("/todo", verifyUser, todoRender);
+todoRouter.get("/todo", verifyUser, redirectRender);
+todoRouter.get("/:page", verifyUser, todoRender);
 todoRouter.get("/delete/:id", verifyUser, deleteTodo);
 todoRouter.get("/edit/:id", verifyUser, editRender);
 
