@@ -12,6 +12,7 @@
 
 
 <body>
+    <div><a href="/logout"><i class="fas fa-sign-out-alt"></i></a></div>
     
     <div class="container">
     <h1>Todolist</h1>
@@ -22,6 +23,11 @@
         </form>
     </div>
 
+    <div>
+        <p>Sort by:</p>
+        <a href="/1/?sortDate=-1">Latest</a>
+        <a href="/1/?sortDate=1">Oldest</a>
+    </div>
     <div class="todo-container">
             <% for (let i = 0; i <data.length; i++) { %>
             <% let a = data[i].date; %>

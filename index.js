@@ -7,6 +7,7 @@ const mainRouter = require("./routes/mainRoute");
 const registerRouter = require("./routes/registerRoute");
 const loginRouter = require("./routes/loginRoute");
 const todoRouter = require("./routes/todoRoute");
+const logoutRouter = require("./routes/logoutRoute");
 
 
 const app = express();
@@ -26,10 +27,12 @@ app.use(cookieParser())
 
 
 // app use routes
+app.use(logoutRouter);
 app.use(mainRouter);
 app.use(registerRouter);
 app.use(loginRouter);
 app.use(todoRouter);
+
 
 
 mongoose.set("useFindAndModify", false);

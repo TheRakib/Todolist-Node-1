@@ -44,12 +44,14 @@ const todoRender = async (req, res) => {
   let sort = {};
 
   if (sortDate) {
-    
+    sort.date = sortDate;
   }
   try {
     const userTodos = await User.findOne({ _id: req.user.user._id }).populate({
       path: "todoList",
       options: {
+        collation: {locale: "en"},
+          sort: sort,
           skip: ((dataPerPage * page) - dataPerPage),
           limit: dataPerPage,
         },
