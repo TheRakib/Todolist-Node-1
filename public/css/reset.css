@@ -1,0 +1,25 @@
+
+.main {
+    position: absolute;
+    background-image: url(./images/p9mUO.jpg);
+    background-size: cover;
+    background-color: #164A41;
+    background-blend-mode:hard-light;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container {
+    border: 3px solid honeydew;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 10px;
+    padding: 10px; 
+    background:#164A41;
+    position: relative;
+    width: 50%;
+    height: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
