@@ -14,22 +14,21 @@
 <body>
     
     <div class="container">
-    <h1>Todolist</h1>
+    <h1>Edit</h1>
     <div class="input-container">
         <form action="/edit" method="post">
             <input type="text" name="task" value="<%= todo._id %>" hidden>
-            <button type="submit">+</button>
         </form>
     </div>
 
     <div class="todo-container">
  
-                <section class="todo">
+                <section class="edit-todo">
                  
                     <form action="/edit" method="post">
                         <input type="text" name="id" value="<%= todo._id %>" hidden>
-                        <input type="text" name="task" value="<%= todo.task %>">
-                        <button type="submit">+</button>
+                        <input type="text" class="edit" name="task" value="<%= todo.task %>">
+                        <button type="submit">Edit</button>
                     </form>
                     
                 </section>

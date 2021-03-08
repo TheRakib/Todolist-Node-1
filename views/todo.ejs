@@ -16,9 +16,9 @@
     <div class="container">
     <h1>Todolist</h1>
     <div class="input-container">
-        <form action="/todo" method="post">
-            <input type="text" name="task">
-            <button type="submit">+</button>
+        <form action="/todo" method="post" class="input-form">
+            <input type="text" name="task" class="todo-input">
+            <button type="submit" class="add-btn"><i class="fas fa-plus"></i></button>
         </form>
     </div>
 
@@ -40,13 +40,13 @@
                 <section class="todo">
                     <p class="date"><%= date %></p>
                     <p class="task"><%= data[i].task %></p>
-                    <section>
-                        <a class="btn-edit" href="/edit/<%= data[i]._id%>"><i class="far fa-edit"></i></a>
-                        <a class="btn-delete" href="/delete/<%= data[i]._id%>"><i class="fas fa-trash"></i></a>
+                    <section class="buttons">
+                        <a class="btn" href="/edit/<%= data[i]._id%>"><i class="far fa-edit"></i></a>
+                        <a class="btn" href="/delete/<%= data[i]._id%>"><i class="fas fa-trash"></i></a>
                     </section>
                     
                 </section>
-                
+                <hr class="hr">
             <%} %>
         </div>
         
