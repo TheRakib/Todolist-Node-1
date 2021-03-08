@@ -1,42 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/CSS/style.css" type="text/css">
+    <link rel="stylesheet" href="/static/css/todo.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <title>Todo</title>
 </head>
-<body>
 
+
+<body>
+    
     <div class="container">
-        <h1>ToDos</h1>
-        <form action="/" method="post">
-        <input type="text" name="task">
-        <button type="submit">Add</button>
+    <h1>Todolist</h1>
+    <div class="input-container">
+        <form action="/todo" method="post">
+            <input type="text" name="task">
+            <button type="submit">+</button>
         </form>
     </div>
 
     <div class="todo-container">
-        <% for (let i = 0; i <todos.length; i++) { %>
-            <%    if (todos[i]._id == taskId) { %>
-                <form action="/edit/<%=todos[i]._id%>" method="post" class="task-form">
-                <input type="text" name="task" value="<%=todos[i].task%>" class="task-input" required minlength="1" maxlength="30">
-                <button type="submit" id="submit">Submit</button>
-                <a href="/?page=<%= page %>&&sorted=<%= sorted %>">Cancel</a>
-                </form>
-            <% } else { %>
-                <% let dateToString = todos[i].date.toString().split(' ').splice(0, 5); %>
-                    <div class="task-div">    
-                        <span  class="todos"><%= todos[i].task %></span>
-                        <span class="todos"><%= dateToString %></span>
-                        <a href="/edit/<%= todos[i]._id%>"><i class="far fa-edit"></i></a>
-                        <a href="/delete/<%= todos[i]._id%>"><i class="fas fa-trash"></i></a>
-                    </div>
-                <% } %>
-        <% } %>
+            <% for (let i = 0; i <data.length; i++) { %>
+            <% let a = data[i].date; %>
+            <% let dd = a.getDate(); %>
+            <% if (dd < 10) { %>
+            <%dd = "0"+dd; %>
+            <% } %>
+            <% let mm = a.getMonth() + 1; %>
+            <% if (mm < 10) { %>
+            <% mm = "0"+mm; %>
+            <%} %>
+            <% let y = a.getFullYear(); %>
+            <% let z = y.toString(); %>
+            <% let yy = z.slice(2, 4); %>
+            <% let date = dd + '/' + mm + '/' + yy; %>
+                <section class="todo">
+                    <p class="date"><%= date %></p>
+                    <p class="task"><%= data[i].task %></p>
+                    <section>
+                        <a class="btn-edit" href="/edit/<%= data[i]._id%>"><i class="far fa-edit"></i></a>
+                        <a class="btn-delete" href="/delete/<%= data[i]._id%>"><i class="fas fa-trash"></i></a>
+                    </section>
+                    
+                </section>
+                
+            <%} %>
+        </div>
+        
     </div>
-
     
+
 </body>
+
 </html>

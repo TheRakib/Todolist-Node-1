@@ -23,8 +23,8 @@
     </div>
 
     <div class="todo-container">
-            <% for (let i = 0; i <todos.length; i++) { %>
-            <% let a = todos[i].date; %>
+            <% for (let i = 0; i <data.length; i++) { %>
+            <% let a = data[i].date; %>
             <% let dd = a.getDate(); %>
             <% if (dd < 10) { %>
             <%dd = "0"+dd; %>
@@ -38,10 +38,13 @@
             <% let yy = z.slice(2, 4); %>
             <% let date = dd + '/' + mm + '/' + yy; %>
                 <section class="todo">
-                    <p><%= todos[i].task %></p>
-                    <p><%= date %></p>
-                    <a class="btn-edit" href="/edit/<%= todos[i]._id%>"><i class="far fa-edit"></i></a>
-                    <a class="btn-delete" href="/delete/<%= todos[i]._id%>"><i class="fas fa-trash"></i></a>
+                    <p class="date"><%= date %></p>
+                    <p class="task"><%= data[i].task %></p>
+                    <section>
+                        <a class="btn-edit" href="/edit/<%= data[i]._id%>"><i class="far fa-edit"></i></a>
+                        <a class="btn-delete" href="/delete/<%= data[i]._id%>"><i class="fas fa-trash"></i></a>
+                    </section>
+                    
                 </section>
                 
             <%} %>

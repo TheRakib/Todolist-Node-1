@@ -1,10 +1,6 @@
 const Todo = require("../model/todo");
 const User = require("../model/user");
-const todoRender = async (req, res) => {
-  const data = await Todo.find();
 
-  res.render("todo.ejs", { todos: data });
-};
 
 const createTodo = async (req, res) => {
   try {
@@ -37,6 +33,13 @@ const deleteTodo = async (req, res) => {
   }
 };
 
+const todoRender = async (req, res) => {
+  const userTodos = await User.findOne({ _id: req.user.user._id }).populate(
+    "todoList"
+  );
+
+  res.render("todo.ejs", { data: userTodos.todoList});
+};
 module.exports = {
   todoRender,
   createTodo,
