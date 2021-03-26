@@ -20,6 +20,8 @@ userSchema.methods.addTodo = async function(todoId) {
 userSchema.methods.deleteTodo = async function(todoId) {
     this.todoList.pull(todoId);
     this.save();
+    // använd nån annan algorithm 
+    // den kommer att ta bort sista produkten från lista 
 }
 
 const User = mongoose.model("user", userSchema);
